@@ -1,3 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+:root {
+  --desaturatedRed: hsl(0, 36%, 70%);
+  --softRed: hsl(0, 93%, 68%);
+  --darkGrayishRed: hsl(0, 6%, 24%);
+  --linear1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  --linear2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  --font: 15px;
+  --family: "Josefin Sans", sans-serif;
+  --thin: 300;
+  --normal: 300;
+  --bold: 300;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--family);
+  font-size: var(--font);
+}
+
 .App {
-  background-color: aqua;
+  width: 100vw;
+  height: 100vh;
+  background: var(--linear1);
+  display: flex;
+  flex-direction: column;
+
+  .tittle {
+    height: 85px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    img {
+      width: 105px;
+      height: 20px;
+      margin-left: 30px;
+    }
+  }
+
+  .banner {
+    display: flex;
+    width: 100%;
+    height: 250px;
+    img {
+      width: 100%;
+    }
+  }
+
+  .banner-desk {
+    display: none;
+  }
+
+  .content {
+    margin: 70px 35px 40px 35px;
+    text-align: center;
+    width: fit-content;
+    h1 {
+      font-size: 40px;
+      letter-spacing: 15px;
+      line-height: 50px;
+      color: var(--darkGrayishRed);
+      span {
+        color: var(--desaturatedRed);
+        font-size: 40px;
+        font-weight: var(--thin);
+      }
+    }
+
+    p {
+      margin-top: 30px;
+      line-height: 20px;
+      color: var(--desaturatedRed);
+    }
+  }
+
+  .input {
+    margin: 0 30px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .App {
+    position: relative;
+    flex-direction: row-reverse;
+
+    .tittle {
+      height: 85px;
+      position: absolute;
+      top: 13%;
+      img {
+        width: 160px;
+        height: 38px;
+        margin-left: 160px;
+      }
+    }
+
+    .banner {
+      display: none;
+    }
+
+    .banner-desk {
+      display: flex;
+      width: 50%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .container {
+      width: 50%;
+      margin-top: 390px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-image: url("../public/images/bg-pattern-desktop.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: bottom left;
+    }
+
+    .content {
+      margin: 0 180px;
+      text-align: left;
+      width: 370px;
+      h1 {
+        font-size: 60px;
+        letter-spacing: 17px;
+        line-height: 70px;
+
+        span {
+          font-size: 60px;
+        }
+      }
+
+      p {
+        margin-top: 45px;
+        line-height: 24px;
+        width: 450px;
+      }
+    }
+
+    .input {
+      width: 450px;
+      margin: 50px 170px;
+    }
+  }
 }
